@@ -1,7 +1,11 @@
 .profile-container {
+  display: flex;
+  flex-direction: column;
   font-family: "Bungee";
+  height: 100vh;
 
   .profile-header {
+    flex-grow: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,12 +41,50 @@
   }
 
   .profile-body {
+    flex-grow: 1;
+    height: 100%;
     margin-top: 10px;
-    padding: 10px 20px;
     border-radius: 10px 10px 0 0;
     background-color: #e3e3e3;
-    height: 100vw;
 
     color: black;
+
+    .title {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .order-list {
+      width: 100%;
+      list-style: none;
+      margin-top: 40px;
+      background-color: #e3e3e3;
+      .order-card {
+        margin-bottom: 3px;
+        font-family: "Jura";
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #dbdbdb;
+
+        .order-info {
+          font-size: 20px;
+          margin-left: 20px;
+        }
+        .order-status {
+          font-size: 15px;
+          margin-right: 20px;
+          &.delivered {
+            color: green;
+          }
+          &.waiting {
+            color: rgb(234, 114, 39);
+          }
+          &.delivered {
+            color: green;
+          }
+        }
+      }
+    }
   }
 }
