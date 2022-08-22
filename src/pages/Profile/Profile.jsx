@@ -1,18 +1,31 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../components/modal/Modal";
 import "./Profile.scss";
 
 export default function Profile() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const navigate = useNavigate();
 
   function logOut() {
     navigate("/");
   }
 
+  function closeModal() {
+    setModalOpen(false)
+  }
+
+  function openModal() {
+    setModalOpen(true)
+  }
+
   return (
     <div className="profile-container">
       <header className="profile-header">
-        <div className="plus-button">+</div>
+        <div className="plus-button" onClick={openModal}>
+          +
+        </div>
         <div className="logout-button" onClick={logOut}>
           sair
         </div>
@@ -50,7 +63,7 @@ export default function Profile() {
           </li>
         </ul>
       </body>
-      <Modal />
+      {isModalOpen && <Modal closeModal={closeModal}/>}
     </div>
   );
 }
