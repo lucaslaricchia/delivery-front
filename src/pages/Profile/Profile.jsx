@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Modal from "../../components/modal/Modal";
 import "./Profile.scss";
 
 export default function Profile() {
@@ -22,8 +23,8 @@ export default function Profile() {
         <ul className="order-list">
           <li className="order-card">
             <div className="order-info">
-            <p className="order-name">Sanduiche do mc donalds</p>
-            <p className="order-payment">pagament: pix</p>
+              <p className="order-name">Sanduiche do mc donalds</p>
+              <p className="order-payment">pagament: pix</p>
             </div>
             <div className="order-status">
               <p>A caminho...</p>
@@ -31,8 +32,8 @@ export default function Profile() {
           </li>
           <li className="order-card">
             <div className="order-info">
-            <p className="order-name">Compras do mes</p>
-            <p className="order-payment">pagament: dinheiro</p>
+              <p className="order-name">Compras do mes</p>
+              <p className="order-payment">pagament: dinheiro</p>
             </div>
             <div className="order-status delivered">
               <p>Entregue</p>
@@ -40,8 +41,8 @@ export default function Profile() {
           </li>
           <li className="order-card">
             <div className="order-info">
-            <p className="order-name">Sanduiche do mc donalds</p>
-            <p className="order-payment">pagament: transferencia</p>
+              <p className="order-name">Sanduiche do mc donalds</p>
+              <p className="order-payment">pagament: transferencia</p>
             </div>
             <div className="order-status">
               <p>Aguardando entregador</p>
@@ -49,6 +50,7 @@ export default function Profile() {
           </li>
         </ul>
       </body>
+      <Modal />
     </div>
   );
 }
